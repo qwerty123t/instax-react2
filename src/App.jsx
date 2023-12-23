@@ -1,5 +1,6 @@
 
 import Header from "./components/Header"
+import Select from "./components/Select"
 
 import styled from 'styled-components';
 
@@ -9,6 +10,7 @@ export default function App() {
 	return (
 		<Container>
 			<Header />
+			<Select />
 		</Container>
 	)
 }
