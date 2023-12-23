@@ -1,0 +1,15 @@
+:root {
+	--black: #111111;
+	--full-black: #000000;
+	--border-alternative: #333333;
+	--grey: #a3a3a3;
+	--border: #d2d2d2;
+	--background: #f3f3f3;
+	--full-white: #ffffff;
+}
+
+body {
+	background-color: var(--background);
+	font-family: 'DIN Pro', system-ui, sans-serif;
+	line-height: 1.15;
+}
