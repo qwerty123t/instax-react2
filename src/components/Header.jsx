@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Header() {
 	const { width } = useWindowDimensions();
 	return (
-		<HeaderContainer>
+		<>
 			<Header1>
 				<Paragraph>Warning! Top-notch instant cameras known to boost happiness</Paragraph>
 			</Header1>
@@ -18,20 +18,20 @@ export default function Header() {
 					<CartButton>Cart <span>(0)</span></CartButton>
 				)}
 			</Header2>
-		</HeaderContainer>
+		</>
 	);
 }
-const HeaderContainer = styled.div`
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
+
 
 const Header1 = styled.header`
 	grid-column: 4/5;
 	grid-row: 1/2;
 	border-bottom: 1px solid var(--border);
 	display: flex;
+
+	@media (max-width: 700px) {
+		display: none;
+	}
 `;
 
 const Paragraph = styled.p`
@@ -48,6 +48,11 @@ const Header2 = styled.header`
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--border);
+
+	
+	@media (max-width: 700px) {
+		display: none;
+	}
 `;
 
 const PersonalButton = styled.button`
