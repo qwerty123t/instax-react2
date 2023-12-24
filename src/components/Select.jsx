@@ -6,10 +6,10 @@ export default function Select() {
             <H3>Select</H3>
             <Links>
                 <a href="/">Home</a>
-                <span> -</span>
-                <a href="/" className="current_page">
+                <span> - </span>
+                <CurrentPage href="/">
                     Cameras
-                </a>
+                </CurrentPage>
             </Links>
             <SelectWrapper>
                 <select id="select">
@@ -30,7 +30,7 @@ export default function Select() {
                     <img src="magnifier.svg" alt="Submit" />
                 </button>
             </search>
-            <CompareButton className="compare">Compare</CompareButton>
+            <CompareButton>Compare</CompareButton>
         </Navigation>
     );
 }
@@ -41,10 +41,6 @@ const Navigation = styled.nav`
 		padding-bottom: 5%;
 
 		search {
-			display: none;
-		}
-
-		.compare {
 			display: none;
 		}
 	}
@@ -136,13 +132,11 @@ const Links = styled.div`
 		text-decoration: none;
 		line-height: 1.15;
 	}
-
-	.current_page {
-		color: var(--black);
-		font-weight: 500;
-	}
 `;
-
+const CurrentPage = styled.a`
+	color: var(--black);
+	font-weight: 500;
+`;
 const SelectWrapper = styled.div`
 	@media (width < 700px) {
         display: none;
