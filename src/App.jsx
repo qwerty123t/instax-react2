@@ -1,6 +1,7 @@
 
 import Header from "./components/Header"
 import Select from "./components/Select"
+import LeftSidebar from "./components/LeftSidebar"
 
 import styled from 'styled-components';
 
@@ -11,6 +12,7 @@ export default function App() {
 		<Container>
 			<Header />
 			<Select />
+			<LeftSidebar />
 		</Container>
 	)
 }
