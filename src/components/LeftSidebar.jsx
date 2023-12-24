@@ -87,9 +87,9 @@ const Aside = styled.aside`
 const InstaxLogo = styled.img`
 @media (width < 700px) {
     position: absolute;
-    top: -10 %;
-    left: -0.8 %;
-    width: 7.5 %;
+    top: -10%;
+    left: -0.8%;
+    width: 7.5%;
     transform: rotate(90deg) translateX(-80%) translateY(-35%);
 }
 
@@ -249,21 +249,21 @@ const FujifilmLogo = styled.img`
 // Стили при клике на кнопку меню в левом сайдбаре или темная тема
 // @media(width < 700px) {
 
-    // .sidebar-left--alternative {
-    //     background-color: var(--full-black);
-    //     box-shadow: 0 0 0 200px var(--full-black);
-    //     position: sticky;
-    //     top: 5vh;
-    //     z-index: 10;
-    // }
+// .sidebar-left--alternative {
+//     background-color: var(--full-black);
+//     box-shadow: 0 0 0 200px var(--full-black);
+//     position: sticky;
+//     top: 5vh;
+//     z-index: 10;
+// }
 
-    // .sidebar-left__instax-logo--alternative {
-    //     filter: invert(100%)}
+// .sidebar-left__instax-logo--alternative {
+//     filter: invert(100%)}
 
-    // .sidebar-left__center--button-menu--svg-path__alternative{
-    //     d: path('M39 12.0214L35.9786 9L24 20.9786L12.0214 9L9 12.0214L20.9786 24L9 35.9786L12.0214 39L24 27.0214L35.9786 39L39 35.9786L27.0214 24L39 12.0214Z');
-    //     stroke: var(--full-white);
-    // }
+// .sidebar-left__center--button-menu--svg-path__alternative{
+//     d: path('M39 12.0214L35.9786 9L24 20.9786L12.0214 9L9 12.0214L20.9786 24L9 35.9786L12.0214 39L24 27.0214L35.9786 39L39 35.9786L27.0214 24L39 12.0214Z');
+//     stroke: var(--full-white);
+// }
 // }
 
 // @media(width >= 700px) {
@@ -271,20 +271,20 @@ const FujifilmLogo = styled.img`
 //         width: 0.85vw;
 //     }
 
-    // .sidebar-left__fujifilm-logo--alternative {
-    // 	filter: invert(100%);
-    // }
+// .sidebar-left__fujifilm-logo--alternative {
+// 	filter: invert(100%);
+// }
 
-    // .sidebar-left__center--button-menu--svg-path__alternative {
-    // 	d: path('M39 12.0214L35.9786 9L24 20.9786L12.0214 9L9 12.0214L20.9786 24L9 35.9786L12.0214 39L24 27.0214L35.9786 39L39 35.9786L27.0214 24L39 12.0214Z');
-    // 	stroke: var(--black);
-    // }
-    // .sidebar-left--alternative {
-    // 	background-color: var(--full-black);
-    // 	border-right: 1px solid var(--border-alternative);
-    // }
+// .sidebar-left__center--button-menu--svg-path__alternative {
+// 	d: path('M39 12.0214L35.9786 9L24 20.9786L12.0214 9L9 12.0214L20.9786 24L9 35.9786L12.0214 39L24 27.0214L35.9786 39L39 35.9786L27.0214 24L39 12.0214Z');
+// 	stroke: var(--black);
+// }
+// .sidebar-left--alternative {
+// 	background-color: var(--full-black);
+// 	border-right: 1px solid var(--border-alternative);
+// }
 
-    // .sidebar-left__instax-logo--alternative {
-    // 	filter: invert(100%);
-    // }
+// .sidebar-left__instax-logo--alternative {
+// 	filter: invert(100%);
+// }
 // }

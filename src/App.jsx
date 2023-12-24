@@ -2,6 +2,7 @@
 import Header from "./components/Header"
 import Select from "./components/Select"
 import LeftSidebar from "./components/LeftSidebar"
+import Navigation from "./components/Navigation"
 
 import styled from 'styled-components';
 
@@ -13,6 +14,7 @@ export default function App() {
 			<Header />
 			<Select />
 			<LeftSidebar />
+			<Navigation />
 		</Container>
 	)
 }
