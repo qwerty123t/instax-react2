@@ -6,7 +6,7 @@ export default function Navigation() {
     return (
         <Nav>
             <Menu1>
-                <MenuItem><a href="/">Cameras</a></MenuItem>
+                <MenuItem bold><a href="/">Cameras</a></MenuItem>
                 <MenuItem><a href="/mini11">mini 11</a></MenuItem>
                 <MenuItem><a href="/mini40">mini 40</a></MenuItem>
                 <MenuItem><a href="/mini90">mini 90</a></MenuItem>
@@ -104,34 +104,31 @@ const MenuItem = styled.li`
         display: block;
         cursor: pointer;
     }
+
+    
+    ${props => props.bold && `
+        color: var(--black);
+        text-align: right;
+        letter-spacing: -0.02em;
+        text-decoration: underline;
+        color: var(--black);
+        margin-bottom: 0.41666666666vw; /*8px 0.8vh*/
+        font-size: max(18px, 1.04166666667vw); /*20px 1.852vh*/
+        line-height: max(18px, 1.04166666667vw); /*20px 1.852vh*/
+        font-weight: 500;
+        position: relative;
+
+        ::after {
+            position: absolute;
+            content: '';
+            width: max(15.75px, 1.09375vw); /*21px 1.944444444vh*/
+            height: max(12px, 0.83333333333vw); /*16px 1.481481481vh*/
+            top: max(4px, 0.1vw); /*4px = 0.37037037vh*/
+            right: min(-25px, -1.45833333333vw); /*-25px, -28px = -1.45833333333vw*/
+            background-size: max(15.75px, 1.09375vw) max(12px, 0.83333333333vw);
+            background-image: url(/Arrow2.svg?url);
+            background-repeat: no-repeat;
+        }
+    `}
 `;
 
-
-
-// @media (width >= 700px) {
-
-//     .isCamerasPage {
-//         color: var(--black);
-//         text-align: right;
-//         letter-spacing: -0.02em;
-//         text-decoration: underline;
-//         color: var(--black);
-//         margin-bottom: 0.41666666666vw; /*8px 0.8vh*/
-//         font-size: max(18px, 1.04166666667vw); /*20px 1.852vh*/
-//         line-height: max(18px, 1.04166666667vw); /*20px 1.852vh*/
-//         font-weight: 500;
-//         position: relative;
-//     }
-//     .isCamerasPage::after {
-//         position: absolute;
-//         content: '';
-//         width: max(15.75px, 1.09375vw); /*21px 1.944444444vh*/
-//         height: max(12px, 0.83333333333vw); /*16px 1.481481481vh*/
-//         top: max(4px, 0.1vw); /*4px = 0.37037037vh*/
-//         right: min(-25px, -1.45833333333vw); /*-25px, -28px = -1.45833333333vw*/
-//         background-size: max(15.75px, 1.09375vw) max(12px, 0.83333333333vw);
-//         background-image: url(/Arrow2.svg?url);
-//         background-repeat: no-repeat;
-//     }
-
-// }
