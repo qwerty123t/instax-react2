@@ -66,6 +66,7 @@ const Navigation = styled.nav`
 			letter-spacing: 0em;
 			grid-column: 3/4;
 			grid-row: 1/2;
+			margin-top: auto;
 
 			input {
 				width: 100%;
@@ -124,14 +125,11 @@ const Links = styled.div`
 	grid-column: 1/2;
 	grid-row: 2/3;
 	color: var(--grey);
-
-	a,
-	span {
-		font-size: max(12px, 0.625vw);
+	font-size: max(12px, 0.625vw);
 		font-weight: 400;
 		text-decoration: none;
 		line-height: 1.15;
-	}
+
 `;
 const CurrentPage = styled.a`
 	color: var(--black);
