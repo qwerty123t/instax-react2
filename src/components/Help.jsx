@@ -3,24 +3,31 @@ import { useState } from 'react';
 
 export default function Help() {
     const [isMenu3Open, setMenu3Open] = useState(true);
-    const [isMenu4Open, setMenu4Open] = useState(true);
+    const [isMenu4Open, setMenu4Open] = useState(false);
 
+    const toggleMenu3 = () => {
+        setMenu3Open((prevState) => !prevState)
+    }
+    const toggleMenu4 = () => {
+        setMenu4Open((prevState) => !prevState)
+    }
     return (
         <>
             <Nav>
                 <Menu3>
                     <li>
-                        <MenuHeader open={isMenu3Open}>Help
+                        <MenuHeader open={isMenu3Open} onClick={toggleMenu3}>Help
                             <img id="menu3-arrow" src="arrowmini.svg" alt="" />
                         </MenuHeader>
                     </li>
 
                     {isMenu3Open && (
                         <>
-                            <li><MenuItem className="bold" href="/">Contact us</MenuItem></li>
+                            <li><MenuItem bold={true} href="/">Contact us</MenuItem></li>
                             <li><MenuItem href="/">Help with your instax</MenuItem></li>
                             <li><MenuItem href="/">Terms and conditions</MenuItem></li>
                             <li><MenuItem href="/">Fraudulent websites</MenuItem></li>
+                            <li><MenuItem href="/">Be more generous than ever</MenuItem></li>
                         </>
                     )
                     }
@@ -29,7 +36,7 @@ export default function Help() {
 
                 <Menu4>
                     <li>
-                        <MenuHeader open={isMenu4Open}>
+                        <MenuHeader open={isMenu4Open} onClick={toggleMenu4}>
                             Other
                             <img id="menu4-arrow" src="arrowmini.svg" alt="" />
                         </MenuHeader>
@@ -103,31 +110,33 @@ const MenuItem = styled.a`
         color: var(--black);
     }
 
-    &.bold {
+    ${props => props.bold && `
         margin-top: 0.462962962vh; /*5px*/
         text-decoration: underline;
         font-size: max(12px, 0.625vw); /*12px = 1.111111111vh*/
         line-height: max(20px, 1.04166666667vw); /*20px*/
         font-weight: 500;
         color: var(--black);
+
+        
+    @media (640px > height <= 720px) {
+        margin-top: 0.27777777777vh; /*3px*/
+        line-height: max(18px, 1.04166666667vw);
     }
+
+    @media (height <= 640px) {
+        margin-top: 0.18518518518vh; /*2px*/
+        line-height: max(16px, 1.04166666667vw);
+    }
+    `}
+
 
     @media (640px > height <= 720px) {
         line-height: max(18px, 1.04166666667vw); /*16px 20px*/
-
-        .bold {
-            margin-top: 0.27777777777vh; /*3px*/
-            line-height: max(18px, 1.04166666667vw);
-        }
     }
 
     @media (height <= 640px) {
         line-height: max(16px, 1.04166666667vw); /*16px 20px*/
-
-        .bold {
-            margin-top: 0.18518518518vh; /*2px*/
-            line-height: max(16px, 1.04166666667vw);
-        }
     }
 `;
 
@@ -150,15 +159,6 @@ const MenuHeader = styled.button`
         margin-bottom: 0.462962962vh;
     }
 
-    ${props => props.open && `
-        color: var(--black);
-        font-weight: 500;
-        img {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
-    `}
-
     & img {
         position: absolute;
         width: max(10px, 0.52083333333vw); /*10px = 0.925925925vh*/
@@ -169,6 +169,17 @@ const MenuHeader = styled.button`
         transform: rotate(180deg);
         transition: transform 0.2s, opacity 0.2s;
     }
+
+
+    ${props => props.open && `
+        color: var(--black);
+        font-weight: 500;
+        & img {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+    `}
+
 `;
 
 const Menu4 = styled.ul`
@@ -205,92 +216,3 @@ const Copyright = styled.p`
         line-height: max(8px, 0.41666666666vw);
     }
 `;
-
-
-
-// @media (width >= 700px) {
-
-
-//     .menu3 {
-
-//         .isMenu3Visible {
-
-//         }
-//     }
-
-
-
-//     .menu4 {
-
-//         a {
-
-//         }
-//         a:hover,
-//         a:active {
-//             color: var(--black);
-//         }
-
-//         .menu4-header {
-//             display: block;
-//             width: 100%;
-//             font-size: max(15px, 0.78125vw); /*15px*/
-//             line-height: max(15px, 0.78125vw); /*15px*/
-//             letter-spacing: -0.03em;
-//             font-weight: 300;
-//             color: var(--grey);
-//             padding-bottom: 0.648148148vh; /*7px*/
-//             border-bottom: 1px solid var(--border);
-//             position: relative;
-//             margin-bottom: 0.462962962vh;
-//             transition: color 0.2s;
-
-//             img {
-//                 position: absolute;
-//                 width: max(10px, 0.52083333333vw); /*10px = 0.925925925vh*/
-//                 height: max(7px, 0.36458333333vw); /*7px = 0.648148148vh*/
-//                 top: max(4px, 0.37037037vh); /*4px = 0.37037037vh*/
-//                 right: 0px;
-//                 opacity: 0.3;
-//                 transition: transform 0.2s, opacity 0.2s;
-//                 transform: rotate(180deg);
-//             }
-//         }
-
-//         .isMenu4Visible {
-//             color: var(--black);
-//             font-weight: 500;
-
-//             img {
-//                 opacity: 1;
-//                 transform: rotate(0deg);
-//             }
-//         }
-//     }
-
-//     // .menu4:hover .menu4-header img {
-//     // 	transform: rotate(0deg);
-//     // 	opacity: 1;
-//     // }
-
-//     // .menu4:hover .menu4-header {
-//     // 	color: var(--black);
-//     // 	font-weight: 500;
-//     // }
-
-
-
-//     @media screen and (max-height: 640px) {
-//         .menu4 {
-
-//             .menu4-header {
-//                 font-size: max(14px, 0.72916666666vw);
-//                 line-height: max(14px, 0.72916666666vw);
-//                 padding-bottom: 1px;
-//                 margin-bottom: 0.462962962vh;
-//             }
-//         }
-//     }
-
-
-
-// }

@@ -6,7 +6,7 @@ export default function Navigation() {
     return (
         <Nav>
             <Menu1>
-                <MenuItem bold><a href="/">Cameras</a></MenuItem>
+                <MenuItem bold={true}><a href="/">Cameras</a></MenuItem>
                 <MenuItem><a href="/mini11">mini 11</a></MenuItem>
                 <MenuItem><a href="/mini40">mini 40</a></MenuItem>
                 <MenuItem><a href="/mini90">mini 90</a></MenuItem>
