@@ -4,6 +4,7 @@ import Select from "./components/Select"
 import LeftSidebar from "./components/LeftSidebar"
 import Navigation from "./components/Navigation"
 import Help from "./components/Help"
+import RightSidebar from "./components/RightSidebar"
 
 import styled from 'styled-components';
 
@@ -17,6 +18,7 @@ export default function App() {
 			<LeftSidebar />
 			<Navigation />
 			<Help />
+			<RightSidebar />
 		</Container>
 	)
 }
