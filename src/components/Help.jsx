@@ -23,7 +23,7 @@ export default function Help() {
 
                     {isMenu3Open && (
                         <>
-                            <li><MenuItem bold={true} href="/">Contact us</MenuItem></li>
+                            <li><MenuItem $bold={true} href="/">Contact us</MenuItem></li>
                             <li><MenuItem href="/">Help with your instax</MenuItem></li>
                             <li><MenuItem href="/">Terms and conditions</MenuItem></li>
                             <li><MenuItem href="/">Fraudulent websites</MenuItem></li>
@@ -110,7 +110,7 @@ const MenuItem = styled.a`
         color: var(--black);
     }
 
-    ${props => props.bold && `
+    ${props => props.$bold && `
         margin-top: 0.462962962vh; /*5px*/
         text-decoration: underline;
         font-size: max(12px, 0.625vw); /*12px = 1.111111111vh*/
