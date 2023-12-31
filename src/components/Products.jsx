@@ -42,7 +42,7 @@ const Main = styled.main`
     }
     
     @media (width < 700px) {
-        display: none;
+        display: block;
     }
 `;
 
