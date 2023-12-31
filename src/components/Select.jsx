@@ -36,7 +36,7 @@ export default function Select() {
 }
 
 const Navigation = styled.nav`
-	@media (max-width: 700px) {
+	@media (width < 700px) {
 		padding-top: 5%;
 		padding-bottom: 5%;
 
@@ -45,7 +45,7 @@ const Navigation = styled.nav`
 		}
 	}
 
-	@media (min-width: 700px) {
+	@media (width >= 700px) {
 		grid-column: 4/-1;
 		grid-row: 2/3;
 		border-bottom: 2px solid var(--black);
@@ -183,7 +183,7 @@ const SelectWrapper = styled.div`
 `;
 
 const CompareButton = styled.button`
-    @media (max-width: 700px) {
+    @media (width < 700px) {
         display: none;
     }
 

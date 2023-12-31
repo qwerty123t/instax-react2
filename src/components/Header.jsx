@@ -29,7 +29,7 @@ const Header1 = styled.header`
 	border-bottom: 1px solid var(--border);
 	display: flex;
 
-	@media (max-width: 700px) {
+	@media (width < 700px) {
 		display: none;
 	}
 `;
@@ -50,7 +50,7 @@ const Header2 = styled.header`
 	border-bottom: 1px solid var(--border);
 
 	
-	@media (max-width: 700px) {
+	@media (width < 700px) {
 		display: none;
 	}
 `;
