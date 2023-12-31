@@ -6,7 +6,7 @@ export default function Products() {
     return (
         <Main>
             {camerasData.map((props, index) => (
-                <ProductCard {...props} key={index} />
+                <ProductCard {...props} key={props.model} index={index} />
             ))}
         </Main>
 

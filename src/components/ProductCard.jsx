@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-
-export default function ProductCard({series, format, model, price, index}) {
+export default function ProductCard({ series, format, model, price, index }) {
     return (
-        <a>
+        <Card>
             <p>{series}</p>
             <img src="Arrow2.svg" alt="" />
 
@@ -20,11 +19,11 @@ export default function ProductCard({series, format, model, price, index}) {
 
             <p>RRP {price}</p>
 
-            {index === 0 || index === 5 && (
+            {(index === 0 || index === 5) && (
                 <p>Now___enter____even more ways to give.</p>
 
             )}
-        </a>
+        </Card>
     )
 }
 
@@ -43,4 +42,25 @@ export default function ProductCard({series, format, model, price, index}) {
 <h3>{format} <span>{model}</span></h3>
 
 {/* <Picture {link} {index} alt="{format} {model}" /> */}
+
+const Card = styled.a`
+    @media (width < 700px) {
+        width: 100%;
+        aspect-ratio: 1/1.5;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        outline: 1px solid var(--border);
+        cursor: pointer;
+    }
+
+    @media (width >= 700px) {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        outline: 1px solid var(--border);
+        cursor: pointer;
+    }
+
+`;
 
