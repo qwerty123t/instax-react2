@@ -5,30 +5,30 @@ const getBackgroundColor = index => cardColors[index % cardColors.length];
 
 
 export default function ProductCard({ series, format, model, price, index }) {
-	return (
-		<Card index={index}>
-			<Series>{series}</Series>
-			<ArrowImage src="Arrow2.svg" alt="" />
+    return (
+        <Card index={index}>
+            <Series>{series}</Series>
+            <ArrowImage src="Arrow2.svg" alt="" />
 
-			<AddToWishlistButton>
-				<span>Add to Wishlist</span>
-				<LineAndCircle>
-					<img src="white_circle.svg" alt="" />
-					<div />
-				</LineAndCircle>
-			</AddToWishlistButton>
-			<ProductName>{format} <span>{model}</span></ProductName>
+            <AddToWishlistButton>
+                <span>Add to Wishlist</span>
+                <LineAndCircle>
+                    <img src="white_circle.svg" alt="" />
+                    <div />
+                </LineAndCircle>
+            </AddToWishlistButton>
+            <ProductName>{format} <span>{model}</span></ProductName>
 
-			{/* <Picture {link} {index} alt="{format} {model}" /> */}
+            {/* <Picture {link} {index} alt="{format} {model}" /> */}
 
-			<Price>RRP {price}</Price>
+            <Price>RRP {price}</Price>
 
-			{(index === 0 || index === 5) && (
-				<Tagline>Now___enter____even more ways to give.</Tagline>
+            {(index === 0 || index === 5) && (
+                <Tagline>Now___enter____even more ways to give.</Tagline>
 
-			)}
-		</Card>
-	)
+            )}
+        </Card>
+    )
 }
 
 
@@ -202,18 +202,18 @@ const LineAndCircle = styled.div`
 
 const AddToWishlistButton = styled.button`
     @media (width < 700px) {
-		grid-row: 1/2;
-		grid-column: 2/-1;
-		justify-self: end;
-		width: 76%;
-		height: max(40px, 10vw);
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		margin-top: max(11px, 3vw);
-		margin-right: max(8px, 2vw);
-		background-color: transparent;
-		cursor: pointer;
+        grid-row: 1/2;
+        grid-column: 2/-1;
+        justify-self: end;
+        width: 76%;
+        height: max(40px, 10vw);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: max(11px, 3vw);
+        margin-right: max(8px, 2vw);
+        background-color: transparent;
+        cursor: pointer;
 
         span {
             font-size: max(8px, 2.8vw);
@@ -221,23 +221,23 @@ const AddToWishlistButton = styled.button`
             color: var(--grey);
             line-height: 100%;
             transition: color 0.3s ease;
-		}
+        }
 
         &:hover {
-			span {
-				color: var(--black);
-			}
+            span {
+                color: var(--black);
+            }
 
-			& ${LineAndCircle} {
-				img {
-					border: 1px solid var(--border-alternative);
-				}
+            & ${LineAndCircle} {
+                img {
+                    border: 1px solid var(--border-alternative);
+                }
 
-				div {
-					background-color: var(--border-alternative);
-				}
-			}
-		}
+                div {
+                    background-color: var(--border-alternative);
+                }
+            }
+        }
     }
 
     @media (width >= 700px) {
