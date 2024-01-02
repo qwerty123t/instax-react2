@@ -5,30 +5,30 @@ const getBackgroundColor = index => cardColors[index % cardColors.length];
 
 
 export default function ProductCard({ series, format, model, price, index }) {
-    return (
-        <Card index={index}>
-            <Series>{series}</Series>
-            <ArrowImage src="Arrow2.svg" alt="" />
+	return (
+		<Card index={index}>
+			<Series>{series}</Series>
+			<ArrowImage src="Arrow2.svg" alt="" />
 
-            <AddToWishlistButton>
-                <span>Add to Wishlist</span>
-                <LineAndCircle>
-                    <img src="white_circle.svg" alt="" />
-                    <div />
-                </LineAndCircle>
-            </AddToWishlistButton>
-            <h3>{format} <span>{model}</span></h3>
+			<AddToWishlistButton>
+				<span>Add to Wishlist</span>
+				<LineAndCircle>
+					<img src="white_circle.svg" alt="" />
+					<div />
+				</LineAndCircle>
+			</AddToWishlistButton>
+			<ProductName>{format} <span>{model}</span></ProductName>
 
-            {/* <Picture {link} {index} alt="{format} {model}" /> */}
+			{/* <Picture {link} {index} alt="{format} {model}" /> */}
 
-            <p>RRP {price}</p>
+			<Price>RRP {price}</Price>
 
-            {(index === 0 || index === 5) && (
-                <p>Now___enter____even more ways to give.</p>
+			{(index === 0 || index === 5) && (
+				<Tagline>Now___enter____even more ways to give.</Tagline>
 
-            )}
-        </Card>
-    )
+			)}
+		</Card>
+	)
 }
 
 
@@ -150,7 +150,6 @@ const ArrowImage = styled.img`
 `;
 
 
-
 const LineAndCircle = styled.div`
     @media (width < 700px) {
         display: flex;
@@ -203,17 +202,18 @@ const LineAndCircle = styled.div`
 
 const AddToWishlistButton = styled.button`
     @media (width < 700px) {
-        grid-row: 1/2;
-        grid-column: 2/-1;
-        justify-self: end;
-        width: 76%;
-        height: max(40px, 10vw);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-top: max(11px, 3vw);
-        margin-right: max(8px, 2vw);
-        background-color: transparent;
+		grid-row: 1/2;
+		grid-column: 2/-1;
+		justify-self: end;
+		width: 76%;
+		height: max(40px, 10vw);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: max(11px, 3vw);
+		margin-right: max(8px, 2vw);
+		background-color: transparent;
+		cursor: pointer;
 
         span {
             font-size: max(8px, 2.8vw);
@@ -238,8 +238,6 @@ const AddToWishlistButton = styled.button`
 				}
 			}
 		}
-
-
     }
 
     @media (width >= 700px) {
@@ -254,6 +252,7 @@ const AddToWishlistButton = styled.button`
         margin-top: max(20px, 1.04vw);
         margin-right: max(16px, 0.8vw);
         background-color: transparent;
+        cursor: pointer;
 
         span {
             font-size: max(10px, 0.52vw);
@@ -282,4 +281,97 @@ const AddToWishlistButton = styled.button`
 
     }
 `;
+
+
+const ProductName = styled.h3`
+    @media (width < 700px) {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        justify-self: end;
+        margin-top: max(41px, 15vw);
+        margin-right: max(9px, 2.4vw);
+        font-size: max(16px, 5vw);
+        letter-spacing: -0.1em;
+        color: var(--grey);
+        font-weight: 300;
+        text-align: end;
+
+        span {
+            font-size: max(18px, 5vw);
+            letter-spacing: -0.1em;
+            color: var(--black);
+            font-weight: 500;
+        }
+    }
+
+    @media (width >= 700px) {
+        grid-row: 1/2;
+        grid-column: 2/-1;
+        justify-self: end;
+        margin-top: max(55px, 2.86vw);
+        margin-right: max(16px, 0.8vw);
+        font-size: clamp(16px, 1.40625vw, 1.5vw);
+        letter-spacing: -0.1em;
+        color: var(--grey);
+        font-weight: 300;
+        text-align: end;
+
+        span {
+            font-size: max(27px, 1.40625vw);
+            letter-spacing: -0.1em;
+            color: var(--black);
+            font-weight: 500;
+        }
+    }
+`;
+
+
+const Price = styled.p`
+    @media (width < 700px) {
+        grid-row: 3/-1;
+        grid-column: 1/3;
+        margin-bottom: max(15px, 1.1vw);
+        margin-left: max(8px, 2.5vw);
+        font-size: max(11px, 3.6vw);
+        letter-spacing: -0.03em;
+        color: var(--black);
+        font-weight: 400;
+        align-self: flex-end;
+    }
+
+    @media (width >= 700px) {
+        grid-row: 3/-1;
+        grid-column: 1/2;
+        margin-bottom: max(20px, 1.1vw);
+        margin-left: max(10px, 0.52vw);
+        margin-left: max(14px, 0.73vw);
+        font-size: max(14px, 0.73vw);
+        letter-spacing: -0.03em;
+        color: var(--black);
+        font-weight: 400;
+        align-self: flex-end;
+    }
+`;
+
+
+const Tagline = styled.p`
+    @media (width < 700px) {
+        display: none;
+    }
+
+    @media (width >= 700px) {
+        grid-row: 3/-1;
+        grid-column: 2/-1;
+        margin-right: max(10px, 0.52vw);
+        margin-bottom: max(20px, 1.1vw);
+        text-align: right;
+        font-size: max(14px, 0.73vw);
+        color: var(--grey);
+        font-weight: 300;
+        letter-spacing: -0.005em;
+        align-self: flex-end;
+        justify-self: end;
+    }
+`;
+
 
