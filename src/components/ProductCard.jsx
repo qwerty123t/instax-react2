@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Picture from './ui/Picture'
 
 const cardColors = ['var(--full-white)', '#fdf8f5', 'var(--full-white)', '#eff1e6', '#f5f5f5', '#eeeeee', '#f9f9f9', '#f5f5f5', 'var(--full-white)', '#f2f0f1', 'var(--full-white)'];
 const getBackgroundColor = index => cardColors[index % cardColors.length];
 
 
-export default function ProductCard({ series, format, model, price, index }) {
+export default function ProductCard({ series, format, model, link, price, index }) {
     return (
         <Card index={index}>
             <Series>{series}</Series>
@@ -19,7 +20,7 @@ export default function ProductCard({ series, format, model, price, index }) {
             </AddToWishlistButton>
             <ProductName>{format} <span>{model}</span></ProductName>
 
-            {/* <Picture {link} {index} alt="{format} {model}" /> */}
+            <Picture link={link} index={index} alt="{format} {model}" />
 
             <Price>RRP {price}</Price>
 
