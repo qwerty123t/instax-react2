@@ -33,21 +33,6 @@ export default function ProductCard({ series, format, model, link, price, index 
 }
 
 
-{/* <a href={link} class="camera{index + 1}">
-<p class="series">{series}</p>
-<img class="arrow" src="Arrow2.svg" alt="" />
-
-<button>
-    <span>Add to Wishlist</span>
-    <div class="line-and-circle">
-        <img src="white_circle.svg" alt="" />
-        <div />
-    </div>
-</button>
-<h3>{format} <span>{model}</span></h3>
-
-{/* <Picture {link} {index} alt="{format} {model}" /> */}
-
 const Card = styled.a`
     @media (width < 700px) {
         width: 100%;
@@ -57,6 +42,7 @@ const Card = styled.a`
         grid-template-columns: 1fr 1fr 1fr;
         outline: 1px solid var(--border);
         cursor: pointer;
+        background-color: ${props => getBackgroundColor(props.index)};
     }
 
     @media (width >= 700px) {
@@ -65,7 +51,6 @@ const Card = styled.a`
         grid-template-columns: 1fr 1fr 1fr;
         outline: 1px solid var(--border);
         cursor: pointer;
-
         background-color: ${props => getBackgroundColor(props.index)};
 
         ${props => props.index === 0 && `
@@ -94,20 +79,21 @@ const Card = styled.a`
 const Series = styled.p`
     @media (width < 700px) {
         grid-row: 1/2;
-        grid-column: 1/2;
-        margin-top: max(15px, 5vw);
-        margin-left: max(8px, 3.5vw);
-        border: 1px solid var(--border);
-        width: 100%;
-        aspect-ratio: 100/40;
+			grid-column: 1/2;
+			margin-top: max(15px, 5vw);
+			margin-left: max(8px, 3.5vw);
+			border: 1px solid var(--border);
+			width: max(100px, 5.2vw);
+			height: max(40px, 2vw);
+			aspect-ratio: 100/40;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--black);
-        font-size: max(10px, 3vw);
-        line-height: 70%;
-        text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: var(--black);
+			font-size: max(10px, 3vw);
+			line-height: 70%;
+			text-align: center;
     }
 
     @media (width >= 700px) {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default function Picture({ src, link, alt, index }) {
     return (
-        <PictureContainer className={`picture${index + 1}`}>
+        <PictureContainer index={index}>
             {!src ? (
                 <>
                     <source srcSet={`${link}/p.avif`} type="image/avif" />
@@ -71,6 +71,7 @@ const PictureContainer = styled.picture`
         `}
         ${props => props.index === 6 && `
             max-width: 70%;
+            margin-top: 9vw;
         `}
         ${props => props.index === 7 && `
             margin-top: 4vw;
