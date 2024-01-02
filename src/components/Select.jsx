@@ -120,16 +120,17 @@ const H3 = styled.h3`
 `;
 
 const Links = styled.div`
-	display: inline-block;
-	margin: 0.3vw 0 0 6.2vw;
-	grid-column: 1/2;
-	grid-row: 2/3;
-	color: var(--grey);
-	font-size: max(12px, 0.625vw);
+	@media (width >= 700px) {
+		display: inline-block;
+		margin: 0.3vw 0 0 6.2vw;
+		grid-column: 1/2;
+		grid-row: 2/3;
+		color: var(--grey);
+		font-size: max(12px, 0.625vw);
 		font-weight: 400;
 		text-decoration: none;
 		line-height: 1.15;
-
+	}
 `;
 const CurrentPage = styled.a`
 	color: var(--black);

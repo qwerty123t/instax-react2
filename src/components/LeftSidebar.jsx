@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export default function LeftSidebar() {
 	return (
 		<Aside>
-			<a href="/">
-				<InstaxLogo src="instaxlogo.svg" alt="Instax logo" />
-			</a>
+			<InstaxLogo href="/">
+				<img src="instaxlogo.svg" alt="Instax logo" />
+			</InstaxLogo>
 			<Center>
 				<MenuButton>
 					<svg
@@ -84,7 +84,7 @@ const Aside = styled.aside`
 
 `;
 
-const InstaxLogo = styled.img`
+const InstaxLogo = styled.a`
 	@media (width < 700px) {
 		position: absolute;
 		top: -10%;
@@ -95,6 +95,10 @@ const InstaxLogo = styled.img`
 
 	@media(width >= 700px) {
 		width: 2.1vw;
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 `;
 
@@ -160,50 +164,50 @@ const MenuButton = styled.button`
 `;
 
 const SearchButton = styled.button`
-@media (width < 700px) {
-    width: 14%;
-    display: flex;
-    order: -1;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    margin-top: 1px;
-    margin-right: 13%;
-    aspect-ratio: 1;
+	@media (width < 700px) {
+		width: 14%;
+		display: flex;
+		order: -1;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		border: none;
+		margin-top: 1px;
+		margin-right: 13%;
+		aspect-ratio: 1;
 
-    svg {
-        width: 100%;
-        height: 100%;
+		svg {
+			width: 100%;
+			height: 100%;
 
-        path {
-            stroke-width: 5;
-        }
-    }
-}
+			path {
+				stroke-width: 5;
+			}
+		}
+	}
 
-@media(width >= 700px) {
-    margin-top: 1vh;
-    width: 2.27272727273vw; /*45px*/
-    height: 2.27272727273vw; /*45px*/
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    background-color: transparent;
-    aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 25%;
+	@media(width >= 700px) {
+		margin-top: 1vh;
+		width: 2.27272727273vw; /*45px*/
+		height: 2.27272727273vw; /*45px*/
+		border: 1px solid var(--border);
+		border-radius: 50%;
+		background-color: transparent;
+		aspect-ratio: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 25%;
 
-    svg {
-        width: 2.27272727273vw; /*45px*/
-        height: 2.27272727273vw; /*45px*/
-    }
+		svg {
+			width: 2.27272727273vw; /*45px*/
+			height: 2.27272727273vw; /*45px*/
+		}
 
-    // :hover path {
-    // 	stroke: var(--black);
-    // }
-}
+		// :hover path {
+		// 	stroke: var(--black);
+		// }
+	}
 `;
 
 

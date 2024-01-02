@@ -28,9 +28,9 @@ html {
 }
 
 /* Reapply the pointer cursor for anchor tags */
-a, button {
+/* a, button {
     cursor: revert;
-}
+} */
 
 /* Remove list styles (bullets/numbers) */
 ol, ul, menu, summary {
@@ -38,10 +38,10 @@ ol, ul, menu, summary {
 }
 
 /* For images to not be able to exceed their container */
-img {
+/* img {
     max-inline-size: 100%;
     max-block-size: 100%;
-}
+} */
 
 /* removes spacing between cells in tables */
 table {

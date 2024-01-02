@@ -56,7 +56,6 @@ const Card = styled.a`
         ${props => props.index === 0 && `
             grid-column: span 2;
 
-            // ВОТ ЭТО НЕ РАБОТАЕТ ВРОДЕ!!!!
 			button {
 				width: 100%;
 				margin-right: max(10px, 0.52vw);
@@ -66,7 +65,7 @@ const Card = styled.a`
 				margin-right: max(12px, 0.625vw);
 			}
 
-			.price {
+			& ${Price} {
 				margin-left: max(10px, 0.52vw);
 			}
         `}
@@ -173,6 +172,7 @@ const LineAndCircle = styled.div`
             height: max(21px, 1.09vw);
             border: 1px solid var(--border);
             border-radius: 50%;
+            aspect-ratio: 1/1;
             transition: border 0.3s ease;
         }
 
