@@ -53,7 +53,8 @@ const Card = styled.a`
         cursor: pointer;
         background-color: ${props => getBackgroundColor(props.index)};
 
-        ${props => props.index === 0 && `
+        ${props => props.index === 0 || props.index === 5 ?
+        `
             grid-column: span 2;
 
 			button {
@@ -68,7 +69,8 @@ const Card = styled.a`
 			& ${Price} {
 				margin-left: max(10px, 0.52vw);
 			}
-        `}
+        `
+        : ``}
     
     }
 
