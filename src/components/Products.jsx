@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { camerasData } from '../database';
 import ProductCard from './ProductCard';
+import VideoCard from './VideoCard';
 
 export default function Products() {
     return (
         <Main>
+            <VideoCard />
             {camerasData.map((props, index) => (
                 <ProductCard {...props} key={props.model} index={index} />
             ))}
         </Main>
-
     )
 }
 
@@ -18,8 +19,8 @@ const Main = styled.main`
     width: 100%;
     height: 100%;
     display: grid;
-    /* overflow-y: scroll;
-    scrollbar-width: none; */
+    overflow-y: scroll;
+    scrollbar-width: none;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-auto-rows: max(35.2vh, 19.8vw);
     grid-auto-flow: dense;
@@ -44,6 +45,7 @@ const Main = styled.main`
     @media (width < 700px) {
         display: flex;
         flex-direction: column;
+        overflow-y: unset;
     }
 `;
 

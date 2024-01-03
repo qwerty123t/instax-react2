@@ -40,6 +40,7 @@ const Card = styled.a`
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+        margin: 1px solid var(--border);
         outline: 1px solid var(--border);
         cursor: pointer;
         background-color: ${props => getBackgroundColor(props.index)};
@@ -52,6 +53,7 @@ const Card = styled.a`
         outline: 1px solid var(--border);
         cursor: pointer;
         background-color: ${props => getBackgroundColor(props.index)};
+        order: ${props => (props.index >= 6 ? props.index + 1 : props.index)};
 
         ${props => props.index === 0 || props.index === 5 ?
         `
