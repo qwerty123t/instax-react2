@@ -5,7 +5,10 @@ import VideoCard from './VideoCard';
 import { useSelector } from 'react-redux';
 
 
-export default function Products() { 
+export default function Products() {
+    // Фильтрация через поисковую строку в компоненте Select
+    // Текст в инпуте из Select приходит через Redux ToolKit
+
     const inputText = useSelector((state) => state.data.value);
     console.log(inputText);
 
@@ -13,17 +16,20 @@ export default function Products() {
         const { format, model, series } = camera;
         const searchText = inputText.toLowerCase();
 
-        return (
-            format.toLowerCase().includes(searchText) ||
-            model.toLowerCase().includes(searchText) ||
-            series.toLowerCase().includes(searchText)
+        // если в инпуте несколько слов, то проверяется каждое слово
+        const words = searchText.split(' ');
+        return words.every((word) =>
+            format.toLowerCase().includes(word) ||
+            model.toLowerCase().includes(word) ||
+            series.toLowerCase().includes(word)
         )
+
 
     })
 
     return (
         <Main>
-            <VideoCard />
+            {inputText === '' && <VideoCard />}
             {filteredProducts.map((props, index) => (
                 <ProductCard {...props} key={props.model} index={index} />
             ))}
