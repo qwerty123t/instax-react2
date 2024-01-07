@@ -7,13 +7,20 @@ import VideoCard from './VideoCard';
 
 
 export default function Products() {
-    // Фильтрация через поисковую строку в компоненте Select
-    // Текст в инпуте из Select приходит через Redux ToolKit
+
+    // Компонент со всеми товарами и фильтром.
+    // Фильтрация работает через поисковую строку в компоненте Select.
+    // Текст в инпуте из Select приходит через Redux ToolKit.
+
+
 
     const inputText = useSelector((state) => state.data.value);
     const searchText = inputText.toLowerCase();
 
+
+
     // Обычный поиск
+
     const filteredProducts = camerasData.filter((camera) => {
         const { format, model, series } = camera;
         const words = searchText.split(' ');
@@ -25,7 +32,13 @@ export default function Products() {
         )
     })
 
+
+
     // Умный поиск
+    // Используется если обычный поиск ничего не находит.
+    // Умный поиск не используется по умолчанию из-за того при вводе 
+    // малого кол-ва символов, выдаёт результаты хуже чем обычный поиск
+
     const smartFilteredProducts = searchText ? camerasData
         .map((camera) => ({
             camera,
@@ -37,6 +50,8 @@ export default function Products() {
         .sort((a, b) => a.distanceModel - b.distanceModel)
         .map(({ camera }) => camera)
         : camerasData
+
+
 
     return (
         <Main>
@@ -53,6 +68,7 @@ export default function Products() {
 }
 
 
+
 const Main = styled.main`
     width: 100%;
     height: 100%;
@@ -66,7 +82,6 @@ const Main = styled.main`
     position: relative;
     grid-column: 4/6;
     grid-row: 3/-1;
-
 
     @media (width < 1700px) {
         grid-template-columns: 25% 25% 25% 25%;
