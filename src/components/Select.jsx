@@ -1,38 +1,53 @@
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateData } from '../store/slice';
 import styled from 'styled-components';
 
 export default function Select() {
-    return (
-        <Navigation>
-            <H3>Select</H3>
-            <Links>
-                <a href="/">Home</a>
-                <span> - </span>
-                <CurrentPage href="/">
-                    Cameras
-                </CurrentPage>
-            </Links>
-            <SelectWrapper>
-                <select id="select">
-                    <option value="All films">All films</option>
-                    <option value="mini series">Mini film</option>
-                    <option value="Square series">Square film</option>
-                    <option value="WIDE series">Wide film</option>
-                </select>
-            </SelectWrapper>
-            <search role="search">
-                <input
-                    bind:value="{searchText}"
-                    placeholder="Search your favorite camera"
-                    name="search"
-                    autoComplete="off"
-                />
-                <button>
-                    <img src="magnifier.svg" alt="Submit" />
-                </button>
-            </search>
-            <CompareButton>Compare</CompareButton>
-        </Navigation>
-    );
+	const inputText = useSelector((state) => state.data.value);
+	const dispatch = useDispatch()
+	const [newInputText, setNewInputText] = useState('');
+
+	const handleInputChange = (e) => {
+		setNewInputText(e.target.value);
+		dispatch(updateData(e.target.value));
+	};
+
+
+	return (
+		<Navigation>
+			<H3>Select</H3>
+			<Links>
+				<a href="/">Home</a>
+				<span> - </span>
+				<CurrentPage href="/">
+					Cameras
+				</CurrentPage>
+			</Links>
+			<SelectWrapper>
+				<select id="select">
+					<option value="All films">All films</option>
+					<option value="mini series">Mini film</option>
+					<option value="Square series">Square film</option>
+					<option value="WIDE series">Wide film</option>
+				</select>
+			</SelectWrapper>
+			<search role="search">
+				<input
+					value={newInputText}
+					onChange={handleInputChange}
+					placeholder="Search your favorite camera"
+					name="search"
+					autoComplete="off"
+					type="text"
+				/>
+				<button>
+					<img src="magnifier.svg" alt="Submit" />
+				</button>
+			</search>
+			<CompareButton>Compare</CompareButton>
+		</Navigation>
+	);
 }
 
 const Navigation = styled.nav`

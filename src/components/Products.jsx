@@ -2,8 +2,13 @@ import styled from 'styled-components';
 import { camerasData } from '../database';
 import ProductCard from './ProductCard';
 import VideoCard from './VideoCard';
+import { useSelector } from 'react-redux';
 
-export default function Products() {
+
+export default function Products() { 
+    const inputText = useSelector((state) => state.data.value);
+    console.log(inputText);
+
     return (
         <Main>
             <VideoCard />
