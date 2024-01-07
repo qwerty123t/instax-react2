@@ -9,10 +9,22 @@ export default function Products() {
     const inputText = useSelector((state) => state.data.value);
     console.log(inputText);
 
+    const filteredProducts = camerasData.filter((camera) => {
+        const { format, model, series } = camera;
+        const searchText = inputText.toLowerCase();
+
+        return (
+            format.toLowerCase().includes(searchText) ||
+            model.toLowerCase().includes(searchText) ||
+            series.toLowerCase().includes(searchText)
+        )
+
+    })
+
     return (
         <Main>
             <VideoCard />
-            {camerasData.map((props, index) => (
+            {filteredProducts.map((props, index) => (
                 <ProductCard {...props} key={props.model} index={index} />
             ))}
         </Main>
