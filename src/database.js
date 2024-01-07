@@ -1,5 +1,5 @@
 const miniLiPlay = {
-	series: 'mini series',
+	series: 'mini',
 	format: 'instax',
 	model: 'mini LiPlay',
 	color: 'Elegant Black',
@@ -11,7 +11,7 @@ const miniLiPlay = {
 	text: 'Small size fits just about anywhere and perfect for on-the-go.'
 };
 const mini90 = {
-	series: 'mini series',
+	series: 'mini',
 	format: 'instax',
 	model: 'mini 90',
 	color: 'Brown',
@@ -23,7 +23,7 @@ const mini90 = {
 	text: 'Designed with a classic look, the instax mini 90 offers advanced features, such as bulb and double exposures, that are attractions of traditional analog cameras and offer an enhanced capability to capture light creatively.'
 };
 const mini40 = {
-	series: 'mini series',
+	series: 'mini',
 	format: 'instax',
 	model: 'mini 40',
 	color: 'Black',
@@ -34,7 +34,7 @@ const mini40 = {
 	text: 'Next level prints for your inner trendsetter and outer image maker, with stylish, timeless design and remarkable features.'
 };
 const mini11 = {
-	series: 'mini series',
+	series: 'mini',
 	format: 'instax',
 	model: 'mini 11',
 	color: 'Ice White',
@@ -46,7 +46,7 @@ const mini11 = {
 	text: 'Five fun colors, super simple operation, selfie mode for your most share-worthy moments and auto-exposure for bright photos anywhere, anytime. What’s not to love?'
 };
 const squareSQ1 = {
-	series: 'Square series',
+	series: 'Square',
 	format: 'Square',
 	model: 'SQ1',
 	color: 'Terracotta Orange',
@@ -58,7 +58,7 @@ const squareSQ1 = {
 	text: 'Squeeze more fun, more friends and more memories into your prints with the instax SQUARE SQ1.'
 };
 const squareSQ20 = {
-	series: 'Square series',
+	series: 'Square',
 	format: 'Square',
 	model: 'SQ20',
 	color: 'Beige',
@@ -69,7 +69,7 @@ const squareSQ20 = {
 	text: 'Instax SQ20'
 };
 const wide300 = {
-	series: 'WIDE series',
+	series: 'WIDE',
 	format: 'WIDE',
 	model: '300',
 	color: 'Toffee',
@@ -81,7 +81,7 @@ const wide300 = {
 };
 
 // const wide400 = {
-// 	series: 'WIDE series',
+// 	series: 'WIDE',
 // 	format: 'WIDE',
 // 	model: '400',
 // 	color: 'Toffee',

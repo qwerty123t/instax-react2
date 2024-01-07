@@ -1,8 +1,9 @@
+import { useSelector } from 'react-redux';
+import levenshtein from 'fast-levenshtein';
 import styled from 'styled-components';
 import { camerasData } from '../database';
 import ProductCard from './ProductCard';
 import VideoCard from './VideoCard';
-import { useSelector } from 'react-redux';
 
 
 export default function Products() {
@@ -10,29 +11,43 @@ export default function Products() {
     // Текст в инпуте из Select приходит через Redux ToolKit
 
     const inputText = useSelector((state) => state.data.value);
-    console.log(inputText);
+    const searchText = inputText.toLowerCase();
 
+    // Обычный поиск
     const filteredProducts = camerasData.filter((camera) => {
         const { format, model, series } = camera;
-        const searchText = inputText.toLowerCase();
-
-        // если в инпуте несколько слов, то проверяется каждое слово
         const words = searchText.split(' ');
+
         return words.every((word) =>
             format.toLowerCase().includes(word) ||
             model.toLowerCase().includes(word) ||
             series.toLowerCase().includes(word)
         )
-
-
     })
+
+    // Умный поиск
+    const smartFilteredProducts = searchText ? camerasData
+        .map((camera) => ({
+            camera,
+            distanceModel: levenshtein.get(searchText.toLowerCase(), camera.model.toLowerCase()),
+            distanceFormat: levenshtein.get(searchText.toLowerCase(), camera.format.toLowerCase()),
+            distanceSeries: levenshtein.get(searchText.toLowerCase(), camera.series.toLowerCase())
+        }))
+        .filter(({ distanceModel, distanceFormat }) => distanceModel <= 5 || distanceFormat <= 5 || distanceSeries <= 5)
+        .sort((a, b) => a.distanceModel - b.distanceModel)
+        .map(({ camera }) => camera)
+        : camerasData
 
     return (
         <Main>
             {inputText === '' && <VideoCard />}
-            {filteredProducts.map((props, index) => (
-                <ProductCard {...props} key={props.model} index={index} />
-            ))}
+            {filteredProducts.length > 0 ?
+                filteredProducts.map((props, index) => (
+                    <ProductCard {...props} key={props.model} index={index} />
+                )) : smartFilteredProducts.map((props, index) => (
+                    <ProductCard {...props} key={props.model} index={index} />
+                ))
+            }
         </Main>
     )
 }

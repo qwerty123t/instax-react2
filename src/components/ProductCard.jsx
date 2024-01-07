@@ -8,7 +8,7 @@ const getBackgroundColor = index => cardColors[index % cardColors.length];
 export default function ProductCard({ series, format, model, link, price, index }) {
     return (
         <Card index={index}>
-            <Series>{series}</Series>
+            <Series>{series} series</Series>
             <ArrowImage src="Arrow2.svg" alt="" />
 
             <AddToWishlistButton>
