@@ -46,7 +46,7 @@ export default function Products() {
             distanceFormat: levenshtein.get(searchText.toLowerCase(), camera.format.toLowerCase()),
             distanceSeries: levenshtein.get(searchText.toLowerCase(), camera.series.toLowerCase())
         }))
-        .filter(({ distanceModel, distanceFormat }) => distanceModel <= 5 || distanceFormat <= 5 || distanceSeries <= 5)
+        .filter(({ distanceModel, distanceFormat, distanceSeries }) => distanceModel <= 5 || distanceFormat <= 5 || distanceSeries <= 5)
         .sort((a, b) => a.distanceModel - b.distanceModel)
         .map(({ camera }) => camera)
         : camerasData
