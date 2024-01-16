@@ -1,28 +1,28 @@
 import styled from 'styled-components';
-
+import { Link } from "react-router-dom"
 // Нужно добавить стили для элемента меню, на странице которого находится посетитель
 
 export default function Navigation() {
     return (
         <Nav>
             <Menu1>
-                <MenuItem $bold={true}><a href="/">Cameras</a></MenuItem>
-                <MenuItem><a href="/mini11">mini 11</a></MenuItem>
-                <MenuItem><a href="/mini40">mini 40</a></MenuItem>
-                <MenuItem><a href="/mini90">mini 90</a></MenuItem>
-                <MenuItem><a href="/miniLiPlay">mini LiPlay</a></MenuItem>
-                <MenuItem><a href="/squareSQ1">SQUARE SQ1</a></MenuItem>
-                <MenuItem><a href="/squareSQ20">SQUARE SQ20</a></MenuItem>
-                <MenuItem><a href="/wide300">WIDE 300</a></MenuItem>
+                <MenuItem $bold={true}><Link to="/">Cameras</Link></MenuItem>
+                <MenuItem><Link to="/mini11">mini 11</Link></MenuItem>
+                <MenuItem><Link to="/mini40">mini 40</Link></MenuItem>
+                <MenuItem><Link to="/mini90">mini 90</Link></MenuItem>
+                <MenuItem><Link to="/miniLiPlay">mini LiPlay</Link></MenuItem>
+                <MenuItem><Link to="/squareSQ1">SQUARE SQ1</Link></MenuItem>
+                <MenuItem><Link to="/squareSQ20">SQUARE SQ20</Link></MenuItem>
+                <MenuItem><Link to="/wide300">WIDE 300</Link></MenuItem>
             </Menu1>
 
             <Menu2>
-                <MenuItem><a href="/">PRINTERS</a></MenuItem>
-                <MenuItem><a href="/">FILM</a></MenuItem>
-                <MenuItem><a href="/">LOWDOWN</a></MenuItem>
-                <MenuItem><a href="/">JOIN US</a></MenuItem>
-                <MenuItem><a href="/">ABOUT</a></MenuItem>
-                <MenuItem><a href="/">SUPPORT</a></MenuItem>
+                <MenuItem><Link to="/">PRINTERS</Link></MenuItem>
+                <MenuItem><Link to="/">FILM</Link></MenuItem>
+                <MenuItem><Link to="/">LOWDOWN</Link></MenuItem>
+                <MenuItem><Link to="/">JOIN US</Link></MenuItem>
+                <MenuItem><Link to="/">ABOUT</Link></MenuItem>
+                <MenuItem><Link to="/">SUPPORT</Link></MenuItem>
             </Menu2>
         </Nav>
     );
