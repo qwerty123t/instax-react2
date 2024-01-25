@@ -1,21 +1,47 @@
 import styled from 'styled-components';
 
-export default function Picture({ src, link, alt, index }) {
+export default function Picture({ src, link, alt, index, isVideo }) {
+    let content;
+
+    if (isVideo) {
+        content = (
+            <>
+                <source
+                    srcSet={`${link}/video@1.avif 1x, ${link}/video@2.avif 2x`}
+                    type="image/avif"
+                />
+                <source
+                    srcSet={`${link}/video@1.webp 1x, ${link}/video@2.webp 2x`}
+                    type="image/webp"
+                />
+                <img
+                    src={`${link}/video@1.jpg`}
+                    srcSet={`${link}/video@2.jpg 2x`}
+                    alt={'video preview'}
+                />
+            </>
+        );
+    } else if (!src) {
+        content = (
+            <>
+                <source srcSet={`${link}/p.avif`} type="image/avif" />
+                <source srcSet={`${link}/p.webp`} type="image/webp" />
+                <img src={`${link}/p.png`} alt={alt} />
+            </>
+        );
+    } else {
+        content = (
+            <>
+                <source srcSet={`${src}@1.avif 1x, ${src}@2.avif 2x`} type="image/avif" />
+                <source srcSet={`${src}@1.webp 1x, ${src}@2.webp 2x`} type="image/webp" />
+                <img src={`${src}@1.png`} srcSet={`${src}@2.png 2x`} alt={alt} />
+            </>
+        );
+    }
+
     return (
         <PictureContainer index={index}>
-            {!src ? (
-                <>
-                    <source srcSet={`${link}/p.avif`} type="image/avif" />
-                    <source srcSet={`${link}/p.webp`} type="image/webp" />
-                    <img src={`${link}/p.png`} alt={alt} />
-                </>
-            ) : (
-                <>
-                    <source srcSet={`${src}@1.avif 1x, ${src}@2.avif 2x`} type="image/avif" />
-                    <source srcSet={`${src}@1.webp 1x, ${src}@2.webp 2x`} type="image/webp" />
-                    <img src={`${src}@1.png`} srcSet={`${src}@2.png 2x`} alt={alt} />
-                </>
-            )}
+            {content}
         </PictureContainer>
     );
 }

@@ -14,7 +14,7 @@ export default function Product({ camera }) {
             </LeftArrow>
 
             <PictureWrapper>
-                <Picture src={camera.src1} />
+                <Picture src={camera.src1} link={camera.link} />
             </PictureWrapper>
 
             <RightAngle>
@@ -60,8 +60,6 @@ const Main = styled.main`
         justify-content: center;
     }
 `;
-
-
 
 const LeftAngle = styled.div`
     @media (width < 700px) {

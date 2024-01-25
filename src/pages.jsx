@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation"
 import Help from "./components/Help"
 import Products from "./components/Products"
 import Product from "./components/Product"
+import Description from "./components/Description"
 import RightSidebar from "./components/RightSidebar"
 import styled from 'styled-components';
 
@@ -32,6 +33,7 @@ export const Mini11Page = () => {
             <Navigation />
             <Help />
             <Product camera={mini11} />
+            <Description camera={mini11} />
             <RightSidebar />
         </Container>
     )
