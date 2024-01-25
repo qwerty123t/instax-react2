@@ -115,6 +115,7 @@ const LeftArrow = styled.button`
         left: 0;
         height: 400px;
         width: 100px;
+        cursor: pointer;
 
         img {
             display: none;
@@ -151,14 +152,17 @@ const RightAngle = styled.div`
 
         .exit {
             display: none;
+            cursor: pointer;
         }
 
         .buy {
             display: none;
+            cursor: pointer;
         }
 
         .compare {
             display: none;
+            cursor: pointer;
         }
     }
 
@@ -183,6 +187,7 @@ const RightAngle = styled.div`
             letter-spacing: -0.03em;
             font-weight: 400;
             background-color: transparent;
+            cursor: pointer;
         }
 
         .buy {
@@ -190,6 +195,7 @@ const RightAngle = styled.div`
             position: relative;
             background-color: transparent;
             display: flex;
+            cursor: pointer;
 
             p {
                 font-size: max(14px, 0.73vw);
@@ -221,6 +227,7 @@ const RightAngle = styled.div`
             font-weight: 400;
             background-color: transparent;
             text-align: center;
+            cursor: pointer;
         }
     }
 `;
@@ -236,6 +243,7 @@ const RightArrow = styled.button`
         right: 0;
         height: 400px;
         width: 100px;
+        cursor: pointer;
 
         img {
             display: none;
@@ -277,6 +285,7 @@ const Quiz = styled.div`
         bottom: 14.5vh;
         right: 1vw;
         z-index: 2;
+        cursor: pointer;
 
         .header {
             font-size: max(14px, 0.73vw);
