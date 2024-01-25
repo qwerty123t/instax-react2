@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import Picture from './ui/Picture';
 
 export default function Product({ camera }) {
-    console.log(camera)
-    console.log(camera.src1)
     return (
         <Main>
             <LeftAngle>
@@ -15,9 +13,9 @@ export default function Product({ camera }) {
                 <img src="arrowmini.svg" alt="" />
             </LeftArrow>
 
-            <Picture className="picture" >
+            <PictureWrapper>
                 <Picture src={camera.src1} />
-            </Picture>
+            </PictureWrapper>
 
             <RightAngle>
                 <button className="exit">Close</button>
@@ -210,6 +208,20 @@ const RightAngle = styled.div`
                 border-radius: 50%;
             }
         }
+        .compare {
+            margin-top: 2vw;
+            width: max(130px, 6.77vw); /*130px 12vh*/
+            height: max(40px, 2.08vw); /*40px 3.7vh*/
+            padding-bottom: 0.1vw; /*5px*/
+            border: 1px solid var(--border);
+            font-family: 'DIN Pro', system-ui, sans-serif;
+            font-size: max(16px, 0.83vw); /*16px*/
+            line-height: 100%;
+            letter-spacing: -0.03em;
+            font-weight: 400;
+            background-color: transparent;
+            text-align: center;
+        }
     }
 `;
 
@@ -283,5 +295,22 @@ const Quiz = styled.div`
             letter-spacing: -0.03em;
             color: var(--grey);
         }
+    }
+`;
+
+
+const PictureWrapper = styled.div`
+    @media (width < 700px) {
+        max-width: 100%;
+        order: 1;
+        margin-top: 30px;
+    }
+
+    @media (width >= 700px) {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 60vw; /*560px*/
+        max-height: 31vw;
     }
 `;
