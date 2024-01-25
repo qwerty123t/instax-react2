@@ -13,3 +13,9 @@ body {
 	font-family: 'DIN Pro', system-ui, sans-serif;
 	line-height: 1.15;
 }
+
+::selection {
+    background: var(--border-alternative);
+    color: var(--background);
+    text-shadow: none;
+}
