@@ -18,7 +18,7 @@ export default function ProductCard({ series, format, model, link, price, index 
                     <div />
                 </LineAndCircle>
             </AddToWishlistButton>
-            <ProductName>{format} <span>{model}</span></ProductName>
+            <ProductName>{format} <span>{series === 'mini' ? 'mini' : ''} {model}</span></ProductName>
 
             <Picture link={link} index={index} alt="{format} {model}" />
 

@@ -1,7 +1,7 @@
 export const miniLiPlay = {
 	series: 'mini',
 	format: 'instax',
-	model: 'mini LiPlay',
+	model: 'LiPlay',
 	color: 'Elegant Black',
 	price: '£149.99',
 	src1: 'miniLiPlay/li1',
@@ -13,7 +13,7 @@ export const miniLiPlay = {
 export const mini90 = {
 	series: 'mini',
 	format: 'instax',
-	model: 'mini 90',
+	model: '90',
 	color: 'Brown',
 	price: '£134.99',
 	src1: 'mini90/901',
@@ -25,7 +25,7 @@ export const mini90 = {
 export const mini40 = {
 	series: 'mini',
 	format: 'instax',
-	model: 'mini 40',
+	model: '40',
 	color: 'Black',
 	price: '£89.99',
 	src1: 'mini40/401',
@@ -36,7 +36,7 @@ export const mini40 = {
 export const mini11 = {
 	series: 'mini',
 	format: 'instax',
-	model: 'mini 11',
+	model: '11',
 	color: 'Ice White',
 	price: '£69.99',
 	src1: 'mini11/111',
@@ -90,4 +90,8 @@ export const wide300 = {
 // 	src2: 'WIDE300/WIDE3002',
 // 	link: '/WIDE400'
 // };
-export const camerasData = [miniLiPlay, mini90, mini40, mini11, squareSQ1, squareSQ20, wide300];
+export const camerasDataForMainPage = [miniLiPlay, mini90, mini40, mini11, squareSQ1, squareSQ20, wide300];
+
+
+export const camerasData = [mini11, mini40, mini90, miniLiPlay, squareSQ1, squareSQ20, wide300];
+

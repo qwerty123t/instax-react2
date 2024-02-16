@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import levenshtein from 'fast-levenshtein';
 import styled from 'styled-components';
-import { camerasData } from '../database';
+import { camerasDataForMainPage } from '../database';
 import ProductCard from './ProductCard';
 import VideoCard from './VideoCard';
 
@@ -21,7 +21,7 @@ export default function Products() {
 
     // Обычный поиск
 
-    const filteredProducts = camerasData.filter((camera) => {
+    const filteredProducts = camerasDataForMainPage.filter((camera) => {
         const { format, model, series } = camera;
         const words = searchText.split(' ');
 
@@ -39,7 +39,7 @@ export default function Products() {
     // Умный поиск не используется по умолчанию из-за того при вводе 
     // малого кол-ва символов, выдаёт результаты хуже чем обычный поиск
 
-    const smartFilteredProducts = searchText ? camerasData
+    const smartFilteredProducts = searchText ? camerasDataForMainPage
         .map((camera) => ({
             camera,
             distanceModel: levenshtein.get(searchText.toLowerCase(), camera.model.toLowerCase()),
@@ -49,7 +49,7 @@ export default function Products() {
         .filter(({ distanceModel, distanceFormat, distanceSeries }) => distanceModel <= 5 || distanceFormat <= 5 || distanceSeries <= 5)
         .sort((a, b) => a.distanceModel - b.distanceModel)
         .map(({ camera }) => camera)
-        : camerasData
+        : camerasDataForMainPage
 
 
 

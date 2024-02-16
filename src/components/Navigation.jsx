@@ -1,19 +1,19 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { camerasData } from '../database';
 // Нужно добавить стили для элемента меню, на странице которого находится посетитель
 
-export default function Navigation() {
+export default function Navigation() {    
+
     return (
         <Nav>
             <Menu1>
                 <MenuItem $bold={true}><Link to="/">Cameras</Link></MenuItem>
-                <MenuItem><Link to="/mini11">mini 11</Link></MenuItem>
-                <MenuItem><Link to="/mini40">mini 40</Link></MenuItem>
-                <MenuItem><Link to="/mini90">mini 90</Link></MenuItem>
-                <MenuItem><Link to="/miniLiPlay">mini LiPlay</Link></MenuItem>
-                <MenuItem><Link to="/squareSQ1">SQUARE SQ1</Link></MenuItem>
-                <MenuItem><Link to="/squareSQ20">SQUARE SQ20</Link></MenuItem>
-                <MenuItem><Link to="/wide300">WIDE 300</Link></MenuItem>
+                {camerasData.map((camera, index) => (
+                    <MenuItem key={index}>
+                        <Link to={camera.link}>{camera.series === "Square" ? "SQUARE" : camera.series} {camera.model}</Link>
+                    </MenuItem>
+                ))}
             </Menu1>
 
             <Menu2>
