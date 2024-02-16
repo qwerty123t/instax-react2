@@ -46,11 +46,13 @@ export const Mini40Page = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={mini40} />
             <LeftSidebar />
             <Navigation />
             <Help />
-            <Products />
+            <Product camera={mini40} />
+            <Description camera={mini40} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
@@ -59,11 +61,13 @@ export const Mini90Page = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={mini90} />
             <LeftSidebar />
             <Navigation />
             <Help />
-            <Products />
+            <Product camera={mini90} />
+            <Description camera={mini90} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
@@ -72,11 +76,13 @@ export const MiniLiPlay = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={miniLiPlay} />
             <LeftSidebar />
             <Navigation />
             <Help />
-            <Products />
+            <Product camera={miniLiPlay} />
+            <Description camera={miniLiPlay} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
@@ -85,11 +91,13 @@ export const SquareSQ1 = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={squareSQ1} />
             <LeftSidebar />
             <Navigation />
             <Help />
-            <Products />
+            <Product camera={squareSQ1} />
+            <Description camera={squareSQ1} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
@@ -98,11 +106,13 @@ export const SquareSQ20 = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={squareSQ20} />
             <LeftSidebar />
             <Navigation />
             <Help />
-            <Products />
+            <Product camera={squareSQ20} />
+            <Description camera={squareSQ20} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
@@ -111,11 +121,13 @@ export const Wide300 = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={wide300} />
             <LeftSidebar />
             <Navigation />
             <Help />
-            <Products />
+            <Product camera={wide300} />
+            <Description camera={wide300} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
