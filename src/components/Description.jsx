@@ -1,7 +1,23 @@
 import styled from 'styled-components';
 import Picture from './ui/Picture';
+import { camerasData } from '../database';
 
 export default function Description({ camera }) {
+    // Находим индекс текущей камеры в массиве данных о камерах
+    const currentIndex = camerasData.findIndex(item => item.model === camera.model);
+    // Определяем ссылку на камеру из предыдущего индекса
+    const previousCameraLink = currentIndex === 0 ? camerasData[camerasData.length - 1].link : camerasData[currentIndex - 1].link;
+    // Определяем ссылку на камеру из следующего индекса
+    const nextCameraLink = currentIndex === camerasData.length - 1 ? camerasData[0].link : camerasData[currentIndex + 1].link;
+
+    console.log(currentIndex, 'currentIndex')
+    console.log(camerasData.length, 'camerasData.length')
+
+    const previousNumber = currentIndex === 0 ? `0${camerasData.length}` : `0${currentIndex}`;
+
+    console.log(previousNumber, 'previousNumber')
+
+
     return (
         <Section>
             <Top>
@@ -14,14 +30,14 @@ export default function Description({ camera }) {
             </Top>
 
             <Bottom>
-                <a className="previous" href="/squareSQ1">PREVIOUS</a>
+                <a className="previous" href={previousCameraLink}>PREVIOUS</a>
                 <div className="number-first">
-                    <a href="/squareESQ1">07</a>
+                    <a href={previousCameraLink}>{previousNumber}</a>
                     <div className="line"></div>
                 </div>
 
-                <a className="next" href="/wide300">NEXT</a>
-                <a className="number-second" href="/wide300">06</a>
+                <a className="next" href={nextCameraLink}>NEXT</a>
+                <a className="number-second" href={nextCameraLink}>0{currentIndex + 1}</a>
             </Bottom>
         </Section>
     );
