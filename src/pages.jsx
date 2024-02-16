@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Select from "./components/Select"
+import Info from "./components/Info"
 import LeftSidebar from "./components/LeftSidebar"
 import Navigation from "./components/Navigation"
 import Help from "./components/Help"
@@ -29,7 +30,7 @@ export const Mini11Page = () => {
     return (
         <Container>
             <Header />
-            <Select />
+            <Info camera={mini11} />
             <LeftSidebar />
             <Navigation />
             <Help />
@@ -40,20 +41,7 @@ export const Mini11Page = () => {
         </Container>
     )
 };
-// export const Mini11Page = () => {
-//     return (
-//         <>
-//             <Head />
-//             <Header camera={mini11} />
-//             <LeftSidebar />
-//             <Navigation />
-//             <Center camera={mini11} />
-//             <Description />
-//             <Penultimate />
-//             <RightSidebar />
-//         </>
-//     )
-// };
+
 export const Mini40Page = () => {
     return (
         <Container>
