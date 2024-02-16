@@ -6,6 +6,7 @@ import Help from "./components/Help"
 import Products from "./components/Products"
 import Product from "./components/Product"
 import Description from "./components/Description"
+import Penultimate from "./components/Penultimate"
 import RightSidebar from "./components/RightSidebar"
 import styled from 'styled-components';
 
@@ -34,6 +35,7 @@ export const Mini11Page = () => {
             <Help />
             <Product camera={mini11} />
             <Description camera={mini11} />
+            <Penultimate />
             <RightSidebar />
         </Container>
     )
